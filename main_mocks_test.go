@@ -10,8 +10,12 @@ type MockSearcher struct {
 	methodsToCall map[string]bool
 }
 
+// A mock object register calls it receives, allowing us to assert how to use it in the real code.
+// A mock do not have working implementaions.
 func (ms *MockSearcher) Search(people []*Person, firstName, lastName string) *Person {
 	ms.methodsToCall["Search"] = true
+
+	// Pre-defined behaviour
 	return &Person{
 		FirstName: firstName,
 		LastName:  lastName,

@@ -25,7 +25,7 @@ type Phonebook struct {
 }
 
 // p *Phonebook 是 function receiver
-// 所以 Find 是 Phonebook type 的 method
+// 所以 Find 是 Phonebook 的 method
 func (p *Phonebook) Find(searcher Searcher, firstName, lastName string) (string, error) {
 	if firstName == "" || lastName == "" {
 		return "", ErrMissingArgs
